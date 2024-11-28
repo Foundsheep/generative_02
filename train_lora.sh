@@ -22,4 +22,5 @@ accelerate launch diffusers/examples/text_to_image/train_text_to_image_lora.py \
   --checkpointing_steps=500 \
   --validation_prompt="SPR2_BG0G46E_DEHG13598_SABC1470(1.1t)_A365.0(3.0t)_0.640493" \
   --seed=1337 \
-  --caption_column="caption"
+  --caption_column="caption" \
+  --num_validation_images=1
