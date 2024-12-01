@@ -15,7 +15,7 @@ def main(args):
 
     # safety checker disabled
     def return_as_it_is(images, **kwargs):
-        return images, False
+        return images, [False] * len(images)
     pipeline.safety_checker = return_as_it_is
     
     image = pipeline(prompt).images[0]
