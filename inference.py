@@ -12,6 +12,12 @@ def main(args):
     
     pipeline = StableDiffusionPipeline.from_pretrained("stable-diffusion-v1-5/stable-diffusion-v1-5", torch_dtype=torch.float16).to("cuda")
     pipeline.load_lora_weights(repo_id, weight_name="pytorch_lora_weights.safetensors")
+
+    # safety checker disabled
+    def return_as_it_is(images, **kwargs):
+        return images, False
+    pipeline.safety_checker = return_as_it_is
+    
     image = pipeline(prompt).images[0]
     image.save(f"inference_{timestamp}.png")
     print("...inference finished")
