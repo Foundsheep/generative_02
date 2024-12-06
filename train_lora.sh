@@ -1,6 +1,6 @@
 MODEL_NAME="stable-diffusion-v1-5/stable-diffusion-v1-5"
-OUTPUT_DIR="./result_train_lora"
-HUB_MODEL_ID="lora_01"
+OUTPUT_DIR="./result_train_lora_20241129"
+HUB_MODEL_ID="lora_20241129"
 DATASET_NAME="DJMOON/hm_spr_01_03_640_480"
 
 accelerate launch diffusers/examples/text_to_image/train_text_to_image_lora.py \
@@ -11,7 +11,7 @@ accelerate launch diffusers/examples/text_to_image/train_text_to_image_lora.py \
   --random_flip \
   --train_batch_size=1 \
   --gradient_accumulation_steps=4 \
-  --max_train_steps=15000 \
+  --max_train_steps=20000 \
   --learning_rate=1e-04 \
   --max_grad_norm=1 \
   --lr_scheduler="cosine" \
@@ -22,5 +22,6 @@ accelerate launch diffusers/examples/text_to_image/train_text_to_image_lora.py \
   --checkpointing_steps=500 \
   --validation_prompt="SPR2_BG0G46E_DEHG13598_SABC1470(1.1t)_A365.0(3.0t)_0.640493" \
   --seed=1337 \
+  --push_to_hub \
   --caption_column="caption" \
   --num_validation_images=1
