@@ -23,5 +23,5 @@ accelerate launch diffusers/examples/text_to_image/train_text_to_image_with_new_
   --seed=1105 \
   --push_to_hub \
   --caption_column="caption" \
-  --unet_sample_size 480 640 \
+  --unet_sample_size 60 80 \
   --unet_block_out_channels 32 64 128 256
