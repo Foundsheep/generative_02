@@ -19,10 +19,10 @@ accelerate launch diffusers/examples/text_to_image/train_text_to_image_lora.py \
   --lr_scheduler="cosine" \
   --lr_warmup_steps=0 \
   --output_dir=${OUTPUT_DIR} \
-  --push_to_hub \
   --hub_model_id=${HUB_MODEL_ID} \
   --checkpointing_steps=5 \
   --seed=1337 \
   --caption_column="caption" \
+#   --push_to_hub \
 #   --validation_prompt="a simple masking image of self-piercing rivet consisting of 2 plates. The combination consists of rivet type BG0G46E, die type DEHG13598, upper plate type SABC1470 with 1.1 mm thickness, lower plate type A365.0 with 3.0 mm thickness and its head height from upper plate to rivet's top is 0.8395354566597028 mm" \
 #   --num_validation_images=1
