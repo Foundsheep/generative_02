@@ -11,7 +11,7 @@ accelerate launch diffusers/examples/text_to_image/train_text_to_image_with_new_
   --dataloader_num_workers=8 \
   --train_batch_size=1 \
   --gradient_accumulation_steps=4 \
-  --max_train_steps=20000 \
+  --max_train_steps=10 \
   --learning_rate=1e-04 \
   --max_grad_norm=1 \
   --lr_scheduler="cosine" \
@@ -19,11 +19,10 @@ accelerate launch diffusers/examples/text_to_image/train_text_to_image_with_new_
   --output_dir=${OUTPUT_DIR} \
   --push_to_hub \
   --hub_model_id=${HUB_MODEL_ID} \
-  --checkpointing_steps=2500 \
-  --validation_prompt="a simple masking image of self-piercing rivet consisting of 3 plates. The combination consists of rivet type BG0546E, die type DEHG14032, upper plate type SGARC340E with 0.7 mm thickness, middle plate type SGARC440 with 0.7 mm thickness, lower plate type A365.0 with 3.5 mm thickness and its head height from upper plate to rivet's top is 0.7556206201259412 mm" \
+  --checkpointing_steps=5 \
+  --validation_prompts="a simple masking image of self-piercing rivet consisting of 3 plates. The combination consists of rivet type BG0546E, die type DEHG14032, upper plate type SGARC340E with 0.7 mm thickness, middle plate type SGARC440 with 0.7 mm thickness, lower plate type A365.0 with 3.5 mm thickness and its head height from upper plate to rivet's top is 0.7556206201259412 mm" \
   --seed=1105 \
   --push_to_hub \
   --caption_column="caption" \
-  --num_validation_images=1 \
-  --unet_sample_size=480 640 \
-  --unet_block_out_channels=32 64 128 256
+  --unet_sample_size 480 640 \
+  --unet_block_out_channels 32 64 128 256
